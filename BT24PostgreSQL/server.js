@@ -2,11 +2,9 @@ const express = require('express');
 const app = express();
 const client = require('./utils/postgres');
 const text = 'SELECT * FROM student WHERE student.id = $1'
-// const values = ['brianc', 'brian.m.carlson@gmail.com']
 app.use(express.json());
 client.connect();
-let id="1";
-const values = ['1'];
+
 
 app.post('/create', async (req, res) => {
     const query = 'INSERT INTO student(id,name,phone,email,type) VALUES($1, $2, $3, $4, $5)'

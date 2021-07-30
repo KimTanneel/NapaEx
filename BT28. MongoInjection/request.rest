@@ -1,0 +1,12 @@
+POST http://localhost:3000/student
+Content-Type: application/json
+
+# {
+#     "name":"Nam' || '1' =='1"
+# }
+
+{
+    "name":{
+    "$ne": "mymaliciouspassword"
+  }
+}

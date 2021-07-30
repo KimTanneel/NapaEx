@@ -1,0 +1,33 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzAyOTc3MH0.Ny2wkmSt4QpqD8ipvxZng0r3ZQucWOGmJicnvR7MBsc
+###`
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzE0MjgzMywiZXhwIjoxNjI3MTQyODQ4fQ.jgNGTWKYpS3_MbkrQIgi43cRxC9R4f1Q4U5260cguPQ
+###`
+
+POST http://localhost:3000/token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzE0MjY4OH0.h-6M_1fy9fL-y8HD4yRbJiXILUMiwWYWjt_OR0ipcLs"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"Phan",
+    "password":"TuiLaPhan"
+}
+
+### 
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+    "username":"Phan",
+    "password":"TuiLaPhan"
+}

@@ -1,37 +1,51 @@
-const { generateKeyPair } = require('crypto');
+const crypto = require("crypto");
 
-const NodeRSA = require('node-rsa');
-let public =null
-let private = null
 
-generateKeyPair('rsa', {
-    modulusLength: 4096,
-    publicKeyEncoding: {
-      type: 'spki',
-      format: 'pem'
-    },
-    privateKeyEncoding: {
-      type: 'pkcs8',
-      format: 'pem',
-      cipher: 'aes-256-cbc',
-      passphrase: 'top secret'
-    }
-  }, (err, publicKey, privateKey) => {
-      console.log("Gerrnerate");
-    storeKey(publicKey,privateKey)
-  });
+const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
+  modulusLength: 2048,
+});
 
-  let storeKey = (pub,pri)=>{
-     console.log("storekey")
-     public=pub
-     private = pri 
-  }
-console.log(public)
+const data = "My Data";
 
-// const key = new NodeRSA({b: 512});
- 
-// const text = 'Hello RSA!';
-// const encrypted = key.encrypt(text, 'base64');
-// console.log('encrypted: ', encrypted);
-// const decrypted = key.decrypt(encrypted, 'utf8');
-// console.log('decrypted: ', decrypted);
+const encryptedData = crypto.publicEncrypt(
+  {
+    key: publicKey,
+    padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+    oaepHash: "sha256",
+  },
+  Buffer.from(data)
+);
+console.log("encypted data: ", encryptedData.toString("base64"));
+
+const decryptedData = crypto.privateDecrypt(
+  {
+    key: privateKey,
+    padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+    oaepHash: "sha256",
+  },
+  encryptedData
+);
+console.log("decrypted data: ", decryptedData.toString());
+
+
+const verifiableData = "this need to be verified";
+
+const signature = crypto.sign("sha256", Buffer.from(verifiableData), {
+  key: privateKey,
+  padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
+});
+
+console.log(signature.toString("base64"));
+
+
+
+const isVerified = crypto.verify(
+  "sha256",
+  Buffer.from(verifiableData),
+  {
+    key: publicKey,
+    padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
+  },
+  signature
+);
+console.log("signature verified: ", isVerified);

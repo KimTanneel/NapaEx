@@ -14,11 +14,14 @@ Content-Type: application/json
 }
 
 */
+app.get('/',(req,res)=>{
+    res.send("OK index")
+})
 app.post('/account', async (req, res) => {
     console.log("request up")
     let username = req.body.username;
     try { 
-    const query = "SELECT * FROM account where username = '"+username+"'"
+    const query = `SELECT * FROM account WHERE username = '${username}' `
         console.log(query)
         const result = await client.query(query)
         console.log(result.rows);
@@ -48,11 +51,7 @@ app.post('/account', async (req, res) => {
     }
 // })
 */
-const accounts = [
-    {username:"tan",password:"123124"},
-    {username:"admin",password:"123123"}
-]
-console.log({accounts})
+
 app.listen(3000,()=>{
     console.log("app listen in port 3000");
 })

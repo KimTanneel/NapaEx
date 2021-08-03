@@ -1,0 +1,72 @@
+POST http://localhost:3000/student/create
+Content-Type: application/json
+
+{
+    "name":"Thuy",
+    "phone":"097125129",
+    "email":"tan@gmail.com",
+    "type":"HocSinh"
+}
+###
+GET http://localhost:3000/student/index
+###
+POST http://localhost:3000/student/update/60ff819caf20c971949cf3a7
+Content-Type: application/json
+
+{
+    "id":"123",
+    "name":"ViettttNammmmmmmmm",
+    "phone":"097125129",
+    "email":"tan@gmail.com",
+    "type":"HocSinh"
+}
+
+###
+
+POST http://localhost:3000/delete
+Content-Type: application/json
+
+{
+    "id":"60ff819caf20c971949cf3a7"
+}
+###
+
+GET http://localhost:3000/findAll?size=2&page=1&type=HocSinh
+
+###
+GET http://localhost:3000/findById?id=60ff819caf20c971949cf3a7
+
+###
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzAyOTc3MH0.Ny2wkmSt4QpqD8ipvxZng0r3ZQucWOGmJicnvR7MBsc
+###`
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzE0MjgzMywiZXhwIjoxNjI3MTQyODQ4fQ.jgNGTWKYpS3_MbkrQIgi43cRxC9R4f1Q4U5260cguPQ
+###`
+
+POST http://localhost:3000/token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGhhbiIsImlhdCI6MTYyNzE0MjY4OH0.h-6M_1fy9fL-y8HD4yRbJiXILUMiwWYWjt_OR0ipcLs"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"Phan",
+    "password":"TuiLaPhan"
+}
+
+### 
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+    "username":"Phan",
+    "password":"TuiLaPhan"
+}

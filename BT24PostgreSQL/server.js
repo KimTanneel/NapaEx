@@ -85,7 +85,6 @@ app.get('/findById', async (req, res) => {
 // find All
 app.get('/findAll', async (req, res) => {
     // find By type
-                    "select * from student where student.type= 'Hocsinh'LIMIT 2 OFFSET 0"
     const query = "SELECT * FROM student WHERE student.type = $1 LIMIT $2 OFFSET $3";
     const params = []
     try{

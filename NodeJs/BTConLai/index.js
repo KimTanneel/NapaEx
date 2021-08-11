@@ -8,7 +8,6 @@
 
 */
 
-
 /* 
     2. Hiện tượng call back hell
     - Là hiện tượng mà nhiều call back lồng nhau gây khó hiểu, đọc code,
@@ -61,14 +60,6 @@
     - Bind trả về 1 function mới, khác với Call và Apply thực thi function trực tiếp
 */
 
-/* 
-    7. phân biệt call, bind, apply
-    - Call, Bind, Apply đều là prototype của function. 
-    - Cả ba đều cho phép truy cập method của object khác.
-    - Call và Apply giống nhau, chỉ khác cách truyền tham số vào.
-    Call truyền các tham số cách nhau bởi dấu phẩy, còn Apply truyền truyền tham số mảng.
-    - Bind trả về 1 function mới, khác với Call và Apply thực thi function trực tiếp
-*/
 
 /* 
     8. javascript có bao nhiêu kiểu dữ liệu
@@ -82,7 +73,6 @@
     - Bản chất js không phải ngôn ngữ OOP. Nên Js tạo prototype để 
     giải quyết vấn đề kế thừa các property của object
 
-
 */
 
 /* 
@@ -95,15 +85,6 @@
 
 */
 
-/* 
-    10/ trình bày các phương pháp để khởi tạo object
-    - Có 4 cách
-        + Object literal 
-        + New Operator with function 
-        + New Operator with Class
-        + Object create method
-
-*/
 
 /* 
     11/ trình bày các phương pháp để clone object (càng nhiều càng tốt, so sánh ưu nhược điểm)
@@ -126,9 +107,7 @@
 
     - Assign Object
         + Ưu : Giống như Spread là Swallow copy
-        + Ưu : Đễ triển khai
-
-        
+        + Ưu : Đễ triển khai    
 
 */
 

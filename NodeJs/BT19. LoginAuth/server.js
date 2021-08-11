@@ -52,7 +52,7 @@ app.post('/login', authenticate, (req, res) => {
     //Authentication
     const username = req.body.username
     const pass = req.body.username
-    const user = {
+    const user = { 
         name: username
     }
     const accessToken = createNewToken(user);
